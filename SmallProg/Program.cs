@@ -37,7 +37,6 @@ namespace SmallProg
             using (ExcelPackage package = new ExcelPackage(excelfile))
             {
                 ExcelWorksheet sheet = package.Workbook.Worksheets[1];
-
                 int usedRowNum = sheet.Dimension.Rows;
                 for (int i = 2; i < usedRowNum+1; i++)
                 {
