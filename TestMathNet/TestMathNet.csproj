@@ -36,6 +36,10 @@
       <HintPath>..\packages\MathNet.Numerics.3.13.1\lib\net40\MathNet.Numerics.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MathNet.Numerics.Data.Text, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Data.Text.3.2.0\lib\net40\MathNet.Numerics.Data.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="netDxf, Version=0.9.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\netDXF.0.9.3\lib\netDxf.dll</HintPath>
       <Private>True</Private>
