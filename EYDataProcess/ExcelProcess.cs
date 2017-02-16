@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using OfficeOpenXml;
+using System.Data;
+using System.Data.Odbc;
 
 namespace EYDataProcess
 {
