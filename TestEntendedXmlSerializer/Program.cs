@@ -120,7 +120,83 @@ namespace TestEntendedXmlSerializer
                         }
                     }
                 },
-                LH_EmptyZPlanBoxs = new List<EmptyZPlanBox>(),
+                LH_EmptyZPlanBoxs = new List<EmptyZPlanBox>
+                {
+                    new EmptyZPlanBox
+                    {
+                        XDis =1,
+                        YDis=2,
+                        ZDis =3,
+                        EmptyBoxHeight =4,
+                        Point2Ds = new List<Bentley.GeometryNET.DPoint2d>()
+                        {
+                            new Bentley.GeometryNET.DPoint2d(1,1),
+                            new Bentley.GeometryNET.DPoint2d(2,2),
+                            new Bentley.GeometryNET.DPoint2d(3,3)
+                        },
+                        ChameferInfos = new List<EmptyBoxEdgeChameferInfo>
+                        {
+                            new EmptyBoxEdgeChameferInfo
+                            {
+                                EdgeFlag = 1,
+                                IsChamefered = false,
+                                ChamferLength =1,
+                                ChamferWidth=1
+                            },
+                            new EmptyBoxEdgeChameferInfo
+                            {
+                                EdgeFlag = 2,
+                                IsChamefered = true,
+                                ChamferLength =2,
+                                ChamferWidth=2
+                            },
+                            new EmptyBoxEdgeChameferInfo
+                            {
+                                EdgeFlag = 3,
+                                IsChamefered = false,
+                                ChamferLength =3,
+                                ChamferWidth=3
+                            },
+                        }
+                    },
+                    new EmptyZPlanBox
+                    {
+                        XDis =1,
+                        YDis=2,
+                        ZDis =3,
+                        EmptyBoxHeight =4,
+                        Point2Ds = new List<Bentley.GeometryNET.DPoint2d>()
+                        {
+                            new Bentley.GeometryNET.DPoint2d(1,1),
+                            new Bentley.GeometryNET.DPoint2d(2,2),
+                            new Bentley.GeometryNET.DPoint2d(3,3)
+                        },
+                        ChameferInfos = new List<EmptyBoxEdgeChameferInfo>
+                        {
+                            new EmptyBoxEdgeChameferInfo
+                            {
+                                EdgeFlag = 1,
+                                IsChamefered = false,
+                                ChamferLength =1,
+                                ChamferWidth=1
+                            },
+                            new EmptyBoxEdgeChameferInfo
+                            {
+                                EdgeFlag = 2,
+                                IsChamefered = true,
+                                ChamferLength =2,
+                                ChamferWidth=2
+                            },
+                            new EmptyBoxEdgeChameferInfo
+                            {
+                                EdgeFlag = 3,
+                                IsChamefered = false,
+                                ChamferLength =3,
+                                ChamferWidth=3
+                            },
+                        }
+                    }
+                },
                 LH_DoorSill = new DoorSill
                 {
                     DoorSill_A = 1,
