@@ -65,22 +65,19 @@ namespace TestEntendedXmlSerializer
                         {
                             new EmptyBoxEdgeChameferInfo()
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = true,
+                                EdgeFlag = EdgeIndicator.right,
                                 ChamferLength = 2,
                                 ChamferWidth = 3
                             },
                             new EmptyBoxEdgeChameferInfo()
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = true,
+                                EdgeFlag = EdgeIndicator.y5,
                                 ChamferLength = 2,
                                 ChamferWidth = 3
                             },
                             new EmptyBoxEdgeChameferInfo()
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = true,
+                                EdgeFlag = EdgeIndicator.x1,
                                 ChamferLength = 2,
                                 ChamferWidth = 3
                             }
@@ -98,22 +95,19 @@ namespace TestEntendedXmlSerializer
                         {
                             new EmptyBoxEdgeChameferInfo()
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = true,
+                                EdgeFlag =  EdgeIndicator.all,
                                 ChamferLength = 2,
                                 ChamferWidth = 3
                             },
                             new EmptyBoxEdgeChameferInfo()
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = true,
+                                EdgeFlag = EdgeIndicator.back,
                                 ChamferLength = 2,
                                 ChamferWidth = 3
                             },
                             new EmptyBoxEdgeChameferInfo()
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = true,
+                                EdgeFlag = EdgeIndicator.bottom,
                                 ChamferLength = 2,
                                 ChamferWidth = 3
                             }
@@ -138,22 +132,19 @@ namespace TestEntendedXmlSerializer
                         {
                             new EmptyBoxEdgeChameferInfo
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = false,
+                                EdgeFlag = EdgeIndicator.none,
                                 ChamferLength =1,
                                 ChamferWidth=1
                             },
                             new EmptyBoxEdgeChameferInfo
                             {
-                                EdgeFlag = 2,
-                                IsChamefered = true,
+                                EdgeFlag = EdgeIndicator.x0,
                                 ChamferLength =2,
                                 ChamferWidth=2
                             },
                             new EmptyBoxEdgeChameferInfo
                             {
-                                EdgeFlag = 3,
-                                IsChamefered = false,
+                                EdgeFlag = EdgeIndicator.xplan,
                                 ChamferLength =3,
                                 ChamferWidth=3
                             },
@@ -175,22 +166,19 @@ namespace TestEntendedXmlSerializer
                         {
                             new EmptyBoxEdgeChameferInfo
                             {
-                                EdgeFlag = 1,
-                                IsChamefered = false,
+                                EdgeFlag = EdgeIndicator.y6,
                                 ChamferLength =1,
                                 ChamferWidth=1
                             },
                             new EmptyBoxEdgeChameferInfo
                             {
-                                EdgeFlag = 2,
-                                IsChamefered = true,
+                                EdgeFlag = EdgeIndicator.back,
                                 ChamferLength =2,
                                 ChamferWidth=2
                             },
                             new EmptyBoxEdgeChameferInfo
                             {
-                                EdgeFlag = 3,
-                                IsChamefered = false,
+                                EdgeFlag = EdgeIndicator.right,
                                 ChamferLength =3,
                                 ChamferWidth=3
                             },
