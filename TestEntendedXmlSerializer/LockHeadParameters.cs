@@ -19,6 +19,12 @@ namespace PDIWT_MS_CZ.Models
         public ShortCulvert LH_ShortCulvert { get; set; }
         public EnergyDisspater LH_EnergyDisspater { get; set; }
         public Baffle LH_Baffle { get; set; }
+
+        public bool IsParametersValid()
+        {
+            //todo: 添加参数合理性判断
+            return true;
+        }
     }
     #region 底板参数
     /// <summary>
@@ -113,10 +119,36 @@ namespace PDIWT_MS_CZ.Models
     /// </summary>
     public class EmptyBoxEdgeChameferInfo
     {
-        public int EdgeFlag { get; set; }
-        public bool IsChamefered { get; set; }
+        public EdgeIndicator EdgeFlag { get; set; }
         public double ChamferLength { get; set; }
         public double ChamferWidth { get; set; }
+    }
+    [Flags]
+    public enum EdgeIndicator
+    {
+        x0,
+        x1,
+        x2,
+        x3,
+        y4,
+        y5,
+        y6,
+        y7,
+        z8,
+        z9,
+        z10,
+        z11,
+        xplan = x0 | x1 | x2 | x3,
+        yplan = y4 | y5 | y6 | y7,
+        zplan = z8 | z9 | z10 | z11,
+        front = x0 | x3 | z8 | z9,
+        back = x1 | x2 | z10 | z11,
+        right = y6 | y7 | z9 | z10,
+        left = y4 | y5 | z8 | z11,
+        top = x2 | x3 | y5 | y6,
+        bottom = x0 | x1 | y4 | y7,
+        all = xplan | yplan | zplan,
+        none
     }
     #endregion
 
