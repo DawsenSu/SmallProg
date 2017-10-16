@@ -16,6 +16,13 @@ namespace TestMathNet
     {
         static void Main(string[] args)
         {
+            Calculate(100, 300, 100, 80, 50, 80, out double alpha, out double l);
+            Console.WriteLine($"aplha :{alpha/Math.PI*180}\nl:{l}");
+            Console.ReadKey();
+        }
+
+        static void TestTask()
+        {
             //var t1 = new Task(() => TaskMethod("Task 1"));
             //var t2 = new Task(() => TaskMethod("Task 2"));
             //t2.Start();
@@ -112,11 +119,6 @@ namespace TestMathNet
             Console.ReadKey();
         }
 
-        //static Task<int> CreateTask(string name)
-        //{
-        //    return new Task<int>(() => TaskMethod(name));
-        //}
-
         static int TaskMethod(string name, int seconds, CancellationToken token)
         {
             Console.WriteLine("Task {0} is running on a thread id {1}. Is thread pool thread: {2}"
@@ -150,6 +152,12 @@ namespace TestMathNet
             {
                 Console.WriteLine($"f({i}) = {f.Integrate(i)}");
             }
+        }
+
+        static void Calculate(double a, double b,double c, double d,double R1,double R2,out double alpha, out double l)
+        {
+            alpha = FindRoots.OfFunction(x => (d - (1 - Math.Cos(x)) * (R1 + R2)) / (b - Math.Sin(x) * (R1 + R2)) - Math.Tan(x), 0, Math.PI / 2);
+            l = (d - (1 - Math.Cos(alpha))* (R1 + R2)) / Math.Sin(alpha);
         }
     }
 }
