@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallProg", "SmallProg\SmallProg.csproj", "{D7BAC864-798A-4805-A836-E6DCBBE89FA0}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSQL", "TestSQL\TestSQL.csproj", "{9ECB838F-4147-4429-AAF7-27918340F398}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEntendedXmlSerializer", "TestEntendedXmlSerializer\TestEntendedXmlSerializer.csproj", "{FC23C030-C1BB-4798-9972-15CF7113B1D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLightDemo", "MVVMLightDemo\MVVMLightDemo.csproj", "{45E09188-EC4B-48CB-B2E9-8A94E69E2750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{FC23C030-C1BB-4798-9972-15CF7113B1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC23C030-C1BB-4798-9972-15CF7113B1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC23C030-C1BB-4798-9972-15CF7113B1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E09188-EC4B-48CB-B2E9-8A94E69E2750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E09188-EC4B-48CB-B2E9-8A94E69E2750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E09188-EC4B-48CB-B2E9-8A94E69E2750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E09188-EC4B-48CB-B2E9-8A94E69E2750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
