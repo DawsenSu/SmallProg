@@ -52,17 +52,22 @@ namespace CodeBook
             DocumentBuilder builder = new DocumentBuilder(doc);
 
             Font bfont = builder.Font;
-            bfont.Name = "Times New Roman";
+            bfont.Name = "宋体"; 
+            bfont.NameAscii = "Times New Roman";
             foreach (var file in filelist)
             {
+                builder.ParagraphFormat.Alignment = ParagraphAlignment.Center;
+                builder.ParagraphFormat.StyleIdentifier = StyleIdentifier.Heading3;
                 bfont.Bold = true;
-                bfont.Size = 14;
-                builder.Writeln(file);
+                bfont.Size = 15;
+                builder.Writeln(Path.GetFileName(file));
 
+                builder.ParagraphFormat.ClearFormatting();
                 bfont.Bold = false;
-                bfont.Size = 12;
-                builder.Writeln(File.ReadAllText(file));
-                builder.Writeln();
+                bfont.Size = 10.5;
+                builder.Writeln(File.ReadAllText(file,Encoding.GetEncoding("GB2312")));
+                builder.InsertBreak(BreakType.ParagraphBreak);
+                builder.InsertBreak(BreakType.ParagraphBreak);
             }
             doc.Save(Path.Combine(m_path, "2017年MS开发程序集.docx"));
         }

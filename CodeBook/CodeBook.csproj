@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\..\..\360极速浏览器下载\Aspose.Words\Aspose.Words.dll</HintPath>
+      <HintPath>..\..\..\..\..\编程资料\Aspose.Total_for_.NET_DLL_2015-02-25\net2.0\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
