@@ -1,0 +1,71 @@
+﻿<Window
+    x:Class="WeeklyProgressReport_Design.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WeeklyProgressReport_Design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Weekly Progress Report of Design"
+    Width="350"
+    Height="200"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="3,0" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            Margin="0,5"
+            Text="Select time range of statistic:" />
+        <TextBlock Grid.Row="1" Grid.Column="0">Start Time:</TextBlock>
+        <DatePicker Grid.Row="1" Grid.Column="1" Name="StartDatePicker"/>
+        <TextBlock Grid.Row="1" Grid.Column="2">End Time:</TextBlock>
+        <DatePicker Grid.Row="1" Grid.Column="3" Name="EndDatePicker"/>
+        <TextBlock
+            Grid.Row="2"
+            Grid.ColumnSpan="4"
+            Margin="0,5"
+            Text="Select Report Location:" />
+        <TextBox
+            Name="ExcelFilePathBox"
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            IsReadOnly="True" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            MaxWidth="80"
+            Margin="61.667,0.333,0.333,0"
+            Click="Directory_Button_Click"
+            Content="Directory" />
+        <Button
+            Name="ProcessBtn"
+            Grid.Row="4"
+            Grid.ColumnSpan="4"
+            MaxWidth="100"
+            MaxHeight="30"
+            Click="Process_Button_Click"
+            Content="Process"
+            IsEnabled="False" />
+    </Grid>
+</Window>
