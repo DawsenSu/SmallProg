@@ -27,8 +27,8 @@ namespace WeeklyProgressReport_Design
         public MainWindow()
         {
             InitializeComponent();
-            StartDatePicker.SelectedDate = GetWeekFirstDayMon(DateTime.Now);
-            EndDatePicker.SelectedDate = GetWeekLastDaySun(DateTime.Now);
+            StartDatePicker.SelectedDate = GetWeekFirstDayMon(DateTime.Now).AddDays(-1);
+            EndDatePicker.SelectedDate = GetWeekLastDaySun(DateTime.Now).AddDays(-1);
         }
 
         /// <summary>  
@@ -125,14 +125,15 @@ namespace WeeklyProgressReport_Design
                 {
                     sheet.Cells[startrownum, 1].Value = startrownum - 1;
                     sheet.Cells[startrownum, 2].Value = content.DocName;
-                    sheet.Cells[startrownum, 3].Value = content.DocDate.Month.ToString() +"."+content.DocDate.Day.ToString();
+                    sheet.Cells[startrownum, 3].Value = content.DocDate.Month.ToString() + "." + content.DocDate.Day.ToString();
                     sheet.Cells[startrownum, 4].Value = content.IsCOWI ? "√" : "";
                     sheet.Cells[startrownum, 5].Value = content.ISCGR ? "√" : "";
                     sheet.Cells[startrownum, 6].Value = content.Comment;
 
                     startrownum++;
                 }
-                sheet.Cells[1, 1, sheet.Dimension.Rows, sheet.Dimension.Columns].AutoFitColumns();
+                sheet.Cells[1, 1, 1, sheet.Dimension.Columns].Style.Font.Bold = true;
+                sheet.Cells[1, 1, sheet.Dimension.Rows, sheet.Dimension.Columns].AutoFitColumns(0);
                 package.Save();
             }
         }
@@ -143,7 +144,8 @@ namespace WeeklyProgressReport_Design
             {
                 Title = "Enter the output excel name",
                 Filter = "Excel 2010-2017|*.xlsx",
-                InitialDirectory = @"D:\设计一所\项目\Posorja\往来邮件附件\周报更新表格"
+                InitialDirectory = @"D:\设计一所\项目\Posorja\往来邮件附件\周报更新表格",
+                FileName = StartDatePicker.SelectedDate.GetValueOrDefault().ToString("yyyy.MM.dd") + "-" + EndDatePicker.SelectedDate.GetValueOrDefault().ToString("yyyy.MM.dd")
             };
             try
             {
@@ -175,7 +177,7 @@ namespace WeeklyProgressReport_Design
                 System.Windows.MessageBox.Show($"The StartDate must less than EndDate!");
                 return;
             }
-                
+
 
             List<ReportContent> allcontent = new List<ReportContent>();
             foreach (var subfolder in EmailAttachmentsFolder)
@@ -186,15 +188,17 @@ namespace WeeklyProgressReport_Design
             }
 
             allcontent = (from content in allcontent
-                         where content.DocDate >= StartDatePicker.SelectedDate && content.DocDate <= EndDatePicker.SelectedDate
-                         select content).ToList();
+                          where content.DocDate >= StartDatePicker.SelectedDate && content.DocDate <= EndDatePicker.SelectedDate
+                          select content).ToList();
 
-            allcontent.Sort((a, b) => {
+            allcontent.Sort((a, b) =>
+            {
                 if (a.DocDate > b.DocDate)
                     return 1;
                 else if (a.DocDate == b.DocDate)
                     return a.DocName.CompareTo(b.DocName);
-                else return -1; });
+                else return -1;
+            });
             GenerateExcelReport(ExcelFilePathBox.Text, allcontent);
 
             System.Windows.Forms.MessageBox.Show($"File is save in {ExcelFilePathBox.Text}!");

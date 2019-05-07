@@ -1,0 +1,196 @@
+﻿<Window
+    x:Class="CorrespondenceGenerator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CorrespondenceGenerator"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Correspondence Generator"
+    Width="580"
+    Height="340"
+    DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="MaxWidth" Value="250" />
+            <Setter Property="Margin" Value="2" />
+        </Style>
+        <Style x:Key="SpinButton" TargetType="Slider">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="20" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="1" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBox
+                                Grid.RowSpan="3"
+                                VerticalContentAlignment="Center"
+                                BorderThickness="1,1,0,1"
+                                Text="{Binding Value, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <RepeatButton
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Command="Slider.IncreaseLarge">
+                                <Path
+                                    Width="9"
+                                    Height="5"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Data="M0,1 L0.5,0 1,1z"
+                                    Fill="Black"
+                                    Stretch="Fill" />
+                            </RepeatButton>
+                            <Rectangle
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Fill="{TemplateBinding BorderBrush}" />
+                            <RepeatButton
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Command="Slider.DecreaseLarge">
+                                <Path
+                                    Width="9"
+                                    Height="5"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Data="M0,0 L0.5,1 1,0z"
+                                    Fill="Black"
+                                    Stretch="Fill" />
+                            </RepeatButton>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Margin="0,4"
+            Header="Input">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Subject:" />
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding Subject}" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Command="{Binding SelectAttachmentsCommand}"
+                    Content="↓Select Attachments↓" />
+                <TextBox
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Height="100"
+                    Text="{Binding AttachmentNames, Mode=OneWay}" />
+                <CheckBox
+                    Name="cb_ENGno"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Content="Reply for ENG No:"
+                    IsChecked="{Binding IsReply}" />
+                <TextBox
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    IsEnabled="{Binding ElementName=cb_ENGno, Path=IsChecked}"
+                    Text="{Binding ReplyCorrespondence}" />
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Remark:" />
+                <TextBox
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding Remark}" />
+            </Grid>
+        </GroupBox>
+
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Width="100"
+                Command="{Binding CreateCommand}"
+                Content="Create" />
+            <Button
+                Grid.Column="1"
+                Width="100"
+                Command="{Binding EditCommand}"
+                Content="Edit Corres" />
+            <Button
+                Grid.Column="2"
+                Width="100"
+                Command="{Binding CopyCommand}"
+                Content="Copy to APF" />
+            <Button
+                Grid.Column="3"
+                Width="100"
+                Command="{Binding CompressCommand}"
+                Content="Compress" />
+        </Grid>
+
+        <StatusBar
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom"
+            Background="AliceBlue">
+            <StatusBarItem>
+                <TextBlock Text="{Binding Prompt}" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

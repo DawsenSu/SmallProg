@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallProg", "SmallProg\SmallProg.csproj", "{D7BAC864-798A-4805-A836-E6DCBBE89FA0}"
 EndProject
@@ -26,6 +26,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBook", "CodeBook\CodeBook.csproj", "{F41D2E07-BBE7-45E5-95D2-1470ED3148AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeeklyProgressReport_Design", "WeeklyProgressReport_Design\WeeklyProgressReport_Design.csproj", "{B54A27E1-FDA6-45B1-A900-0B2CCAE631C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrespondenceGenerator", "CorrespondenceGenerator\CorrespondenceGenerator.csproj", "{D70B1D74-B48D-44E2-BDE3-2E533E06E457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netdxf_text", "netdxf_text\netdxf_text.csproj", "{246CFFC0-689A-459F-A249-93EC073FE170}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{B54A27E1-FDA6-45B1-A900-0B2CCAE631C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B54A27E1-FDA6-45B1-A900-0B2CCAE631C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B54A27E1-FDA6-45B1-A900-0B2CCAE631C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70B1D74-B48D-44E2-BDE3-2E533E06E457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70B1D74-B48D-44E2-BDE3-2E533E06E457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70B1D74-B48D-44E2-BDE3-2E533E06E457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70B1D74-B48D-44E2-BDE3-2E533E06E457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{246CFFC0-689A-459F-A249-93EC073FE170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246CFFC0-689A-459F-A249-93EC073FE170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246CFFC0-689A-459F-A249-93EC073FE170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246CFFC0-689A-459F-A249-93EC073FE170}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
