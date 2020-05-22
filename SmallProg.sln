@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEntendedXmlSerializer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDIWTEncrypt", "..\..\Gadget\ConsoleTest\ConsoleTest\PDIWTEncrypt.csproj", "{E2DEFE77-8D2D-4E40-8702-088405BB50CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeExcelFilesInCurrentFolder", "MergeExcelFilesInCurrentFolder\MergeExcelFilesInCurrentFolder.csproj", "{50DCF804-532D-4205-AD22-25DBB8CE4282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Properties generator", "Properties generator\Properties generator.csproj", "{502C5DBB-52C7-425C-B480-95132DB0DE9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BentleyResourceStringReader", "BentleyResourceStringReader\BentleyResourceStringReader.csproj", "{5C57E5C2-7692-4CD0-8ACD-20DD9D382259}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +75,18 @@ Global
 		{E2DEFE77-8D2D-4E40-8702-088405BB50CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2DEFE77-8D2D-4E40-8702-088405BB50CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2DEFE77-8D2D-4E40-8702-088405BB50CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DCF804-532D-4205-AD22-25DBB8CE4282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DCF804-532D-4205-AD22-25DBB8CE4282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DCF804-532D-4205-AD22-25DBB8CE4282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DCF804-532D-4205-AD22-25DBB8CE4282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502C5DBB-52C7-425C-B480-95132DB0DE9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502C5DBB-52C7-425C-B480-95132DB0DE9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502C5DBB-52C7-425C-B480-95132DB0DE9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502C5DBB-52C7-425C-B480-95132DB0DE9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C57E5C2-7692-4CD0-8ACD-20DD9D382259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C57E5C2-7692-4CD0-8ACD-20DD9D382259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C57E5C2-7692-4CD0-8ACD-20DD9D382259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C57E5C2-7692-4CD0-8ACD-20DD9D382259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
